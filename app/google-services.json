@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "166315659157",
+    "project_id": "chatapp-b7506",
+    "storage_bucket": "chatapp-b7506.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166315659157:android:6dd50df3c649312cddb09c",
+        "android_client_info": {
+          "package_name": "com.hfad.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166315659157-oa79dsg6rn5tmhr5d13m0j97k0cfhooq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl8a3n6mzN6KcjPZOrJ4xYCql7LSY7JYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166315659157-oa79dsg6rn5tmhr5d13m0j97k0cfhooq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
