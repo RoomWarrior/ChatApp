@@ -25,8 +25,6 @@ import com.hfad.chatapp.Model.Chat;
 import com.hfad.chatapp.Model.User;
 import com.hfad.chatapp.R;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
@@ -47,7 +45,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.user_item, parent, false);
-        return new UserAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -91,13 +89,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         return mUsers.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView username;
         public ImageView profile_image;
         private final ImageView img_on;
         private final ImageView img_off;
-        private TextView last_msg;
+        private final TextView last_msg;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -121,6 +119,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Chat chat = snapshot.getValue(Chat.class);
+                    assert chat != null;
+                    assert firebaseUser != null;
                     if (chat.getReceiver().equals(firebaseUser.getUid()) && chat.getSender().equals(userId) ||
                             chat.getReceiver().equals(userId) && chat.getSender().equals(firebaseUser.getUid())) {
                         theLastMessage = chat.getMessage();
